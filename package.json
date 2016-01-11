@@ -1,0 +1,31 @@
+{
+  "name": "gulp-clojure",
+  "version": "0.1.0",
+  "description": "A gulp plugin for compiling ClojureScript to JavaScript.",
+  "main": "index.js",
+  "dependencies": {
+    "clojurescript": "0.0.1",
+    "gulp-util": "^3.0.7",
+    "object-assign": "^4.0.1",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agconti/gulp-clojure.git"
+  },
+  "keywords": [
+    "clojure",
+    "gulp",
+    "clojurescript"
+  ],
+  "author": "Andrew Conti <agc11d@gmail.com> (agconti.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agconti/gulp-clojure/issues"
+  },
+  "homepage": "https://github.com/agconti/gulp-clojure#readme"
+}
