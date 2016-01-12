@@ -15,7 +15,7 @@ npm install --save-dev gulp-clojure
 'use strict'
 
 const gulp = require('gulp')
-const cljs = require('../index')
+const cljs = require('gulp-clojure')
 
 
 gulp.task('default', () => {
