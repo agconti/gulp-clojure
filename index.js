@@ -5,7 +5,7 @@ const through = require('through2')
 const objectAssign = require('object-assign')
 const cljs = require('clojurescript')
 const GulpClojureError = require('./GulpClojureError')
-const replaceExtension = require('./lib/replace-extension')
+const replaceExtension = require('./lib/replaceExtension')
 
 
 
@@ -14,6 +14,14 @@ function transform (file, enc, callback) {
 
 	if (file.isStream()) {
 		let err = new GulpClojureError('Streaming not supported')
+
+		this.emit('error', err)
+		return callback()
+	}
+
+	if (file.extname !== '.clj') {
+		let message = `Not a valid clojure file! The extension was ${file.extname}`
+		let err = new GulpClojureError(message)
 
 		this.emit('error', err)
 		return callback()
