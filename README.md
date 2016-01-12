@@ -1,10 +1,12 @@
 # gulp-clojure
+[![Build Status](https://travis-ci.org/agconti/gulp-clojure.svg)](https://travis-ci.org/agconti/gulp-clojure)
+
 A gulp plugin for compiling ClojureScript to JavaScript.
 
 ## Installation
 
 ```bash
-npm install gulp-clj
+npm install --save-dev gulp-clj
 ```
 
 ## Usage
