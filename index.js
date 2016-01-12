@@ -5,6 +5,8 @@ const through = require('through2')
 const objectAssign = require('object-assign')
 const cljs = require('clojurescript')
 const GulpClojureError = require('./GulpClojureError')
+const replaceExtension = require('./lib/replace-extension')
+
 
 
 function transform (file, enc, callback) {
@@ -21,7 +23,6 @@ function transform (file, enc, callback) {
 		let compiledJS = cljs.compile(file.contents.toString('utf-8'))
 
 		file.contents = new Buffer(compiledJS)
-
 	} catch (err) {
 		let msg = Array.isArray(err) ? err.join('\n') : err
 		let errorInfo = {
@@ -32,6 +33,9 @@ function transform (file, enc, callback) {
 		let err = new GulpClojureError(msg, errorInfo)
 		this.emit('error', err)
 	}
+
+
+	file.path = replaceExtension(file.path)
 
 	this.push(file)
 	callback()
